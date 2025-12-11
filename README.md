@@ -15,7 +15,9 @@ Ferramenta automatizada para detecção de vulnerabilidades em aplicações Lara
 
 🚀 Instalação
 Instalação Básica (Modo Detecção)
-bash# Clone o repositório
+
+bash
+# Clone o repositório
 git clone https://github.com/seu-usuario/larasploit.git
 cd larasploit
 
@@ -25,8 +27,11 @@ source venv/bin/activate  # No Windows: venv\Scripts\activate
 
 # Instale as dependências
 pip3 install -r requirements.txt
+
 Instalação Completa (Modo Exploração)
-bash# Instale as dependências básicas primeiro
+bash
+
+# Instale as dependências básicas primeiro
 pip3 install -r requirements.txt
 
 # Clone phpggc para geração de payloads
@@ -36,22 +41,28 @@ git clone https://github.com/ambionics/phpggc.git
 git clone https://github.com/OWASP/Larasploit.git temp_larasploit
 cp -r temp_larasploit/ignition_rce ./
 rm -rf temp_larasploit
+
 Dependências Python
 Crie um arquivo requirements.txt com:
 requests>=2.31.0
 beautifulsoup4>=4.12.0
 urllib3>=2.0.0
+
 💻 Uso
 Modo Básico (Detecção)
-bash# Scan simples
+
+bash
+# Scan simples
 python3 laravel.py https://target.com
 
 # Com ambiente virtual ativado
 source venv/bin/activate
 python3 laravel.py https://example.com
 Modo Interativo (Exploração)
-bash# Requer phpggc e ignition_rce instalados
+bash
+# Requer phpggc e ignition_rce instalados
 python3 laravel.py https://target.com -i
+
 Exemplos de Saída
  [Target]:  https://example.com
  
@@ -63,6 +74,7 @@ Exemplos de Saída
  [Common Laravel Cookie]:  XSRF-TOKEN: eyJpdiI6InRuNFBDUElz...
  [Common Laravel Cookie]:  laravel_session: eyJpdiI6ImNNRUFEcnJ0...
  [INFO]:  Laravel 8 detected (with ignition)!
+ 
 🎯 Vulnerabilidades Detectadas
 1. Arquivo .env Exposto
 
@@ -96,6 +108,7 @@ bash$ python3 laravel.py https://vulnerable-site.com
  [VULN] Vulnerability detected: .env file exposed
  [INFO]: APP_KEY leaked: base64:xxxxxxxxxxx
  [VULN] Vulnerability detected: Remote Code Execution with CVE-2021-3129
+ 
 Exemplo 2: Site Seguro
 bash$ python3 laravel.py https://secure-site.com
 
@@ -103,6 +116,7 @@ bash$ python3 laravel.py https://secure-site.com
  [Server]:  nginx/1.22.1
  [PHP Version]:  PHP/8.2.0
  [Common Laravel Cookie]:  XSRF-TOKEN: ...
+ 
 Exemplo 3: Modo Interativo
 bash$ python3 laravel.py https://target.com -i
 
