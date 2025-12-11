@@ -2,17 +2,6 @@
 Laravel Automated Vulnerability Scanner
 
 Ferramenta automatizada para detecção de vulnerabilidades em aplicações Laravel, incluindo scanner de configurações expostas e exploração de CVE-2021-3129.
-📋 Índice
-
-Características
-Instalação
-Uso
-Vulnerabilidades Detectadas
-Exemplos
-Requisitos
-Aviso Legal
-Contribuindo
-Licença
 
 ✨ Características
 
